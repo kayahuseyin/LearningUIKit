@@ -1,24 +1,121 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="FileManager" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="K9P-PK-COx">
+                                <rect key="frame" x="40" y="89" width="313" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u9d-v8-e4g">
+                                <rect key="frame" x="40" y="143" width="65" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Write"/>
+                                <connections>
+                                    <action selector="writeButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tYR-Rj-eIG"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d7u-kD-Ppp">
+                                <rect key="frame" x="165" y="143" width="63" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Read"/>
+                                <connections>
+                                    <action selector="readButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VrZ-fh-Bcq"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xc4-nN-pqn">
+                                <rect key="frame" x="279" y="143" width="74" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Delete"/>
+                                <connections>
+                                    <action selector="deleteButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pks-4p-7c5"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EAH-oX-XaV">
+                                <rect key="frame" x="139" y="201" width="116" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Show Photo"/>
+                                <connections>
+                                    <action selector="showPhotoButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iwM-mz-hxl"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rxa-43-bBN">
+                                <rect key="frame" x="254" y="201" width="123" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Delete Photo"/>
+                                <connections>
+                                    <action selector="deletePhotoButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ssf-hl-Ovn"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lb2-em-RFx">
+                                <rect key="frame" x="16" y="336" width="361" height="452"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ieB-8P-DFR">
+                                <rect key="frame" x="22" y="201" width="110" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Save Photo"/>
+                                <connections>
+                                    <action selector="savePhotoButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JWc-BB-JPI"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ieB-8P-DFR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="22" id="0iw-KZ-Utm"/>
+                            <constraint firstItem="EAH-oX-XaV" firstAttribute="top" secondItem="d7u-kD-Ppp" secondAttribute="bottom" constant="23" id="2uZ-qn-xMA"/>
+                            <constraint firstItem="xc4-nN-pqn" firstAttribute="leading" secondItem="d7u-kD-Ppp" secondAttribute="trailing" constant="51" id="4oR-1a-Tbu"/>
+                            <constraint firstItem="lb2-em-RFx" firstAttribute="top" secondItem="EAH-oX-XaV" secondAttribute="bottom" constant="100" id="86w-aA-dFX"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="lb2-em-RFx" secondAttribute="bottom" constant="30" id="A5S-9O-kWh"/>
+                            <constraint firstItem="xc4-nN-pqn" firstAttribute="leading" secondItem="d7u-kD-Ppp" secondAttribute="trailing" constant="51" id="CnD-eY-F8G"/>
+                            <constraint firstItem="d7u-kD-Ppp" firstAttribute="leading" secondItem="u9d-v8-e4g" secondAttribute="trailing" constant="60" id="D3B-GC-CJe"/>
+                            <constraint firstItem="K9P-PK-COx" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="MZr-gQ-3fC"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="xc4-nN-pqn" secondAttribute="trailing" constant="40" id="NID-Fa-pOn"/>
+                            <constraint firstItem="lb2-em-RFx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="NlK-yK-cPJ"/>
+                            <constraint firstItem="d7u-kD-Ppp" firstAttribute="top" secondItem="K9P-PK-COx" secondAttribute="bottom" constant="20" id="UOZ-nH-efk"/>
+                            <constraint firstItem="rxa-43-bBN" firstAttribute="top" secondItem="xc4-nN-pqn" secondAttribute="bottom" constant="23" id="VeO-og-YGz"/>
+                            <constraint firstItem="xc4-nN-pqn" firstAttribute="top" secondItem="K9P-PK-COx" secondAttribute="bottom" constant="20" id="WRe-x0-Eme"/>
+                            <constraint firstItem="K9P-PK-COx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="XHp-tl-je0"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="lb2-em-RFx" secondAttribute="trailing" constant="16" id="a1J-dx-D9P"/>
+                            <constraint firstItem="ieB-8P-DFR" firstAttribute="top" secondItem="u9d-v8-e4g" secondAttribute="bottom" constant="23" id="bJv-PI-RmK"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="EAH-oX-XaV" secondAttribute="trailing" constant="138" id="dsV-GS-VIY"/>
+                            <constraint firstItem="rxa-43-bBN" firstAttribute="top" secondItem="xc4-nN-pqn" secondAttribute="bottom" constant="23" id="ia7-36-s7M"/>
+                            <constraint firstItem="EAH-oX-XaV" firstAttribute="top" secondItem="d7u-kD-Ppp" secondAttribute="bottom" constant="23" id="jrj-OQ-H3Z"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="rxa-43-bBN" secondAttribute="trailing" constant="16" id="liN-kN-aSO"/>
+                            <constraint firstItem="lb2-em-RFx" firstAttribute="top" secondItem="ieB-8P-DFR" secondAttribute="bottom" constant="100" id="oeu-2g-AJK"/>
+                            <constraint firstItem="EAH-oX-XaV" firstAttribute="leading" secondItem="ieB-8P-DFR" secondAttribute="trailing" constant="7" id="qC5-t5-8Pd"/>
+                            <constraint firstItem="u9d-v8-e4g" firstAttribute="top" secondItem="K9P-PK-COx" secondAttribute="bottom" constant="20" id="tQR-Yo-Ggi"/>
+                            <constraint firstItem="u9d-v8-e4g" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="vWF-7b-MUP"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="K9P-PK-COx" secondAttribute="trailing" constant="40" id="xya-6I-i6d"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="imageView" destination="lb2-em-RFx" id="yuE-Az-TCN"/>
+                        <outlet property="textField" destination="K9P-PK-COx" id="5cZ-pD-ziq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="130.53435114503816" y="-34.507042253521128"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
