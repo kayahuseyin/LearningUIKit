@@ -1,1 +1,1 @@
-Some of the basic projects that I made on my UIKit learning journey. 
+Some of the basic projects that I worked on.
